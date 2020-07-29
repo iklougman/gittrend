@@ -22,3 +22,9 @@ body {
   font-family: $lato;
   height: 100vh;
 }
+
+@media (min-width: 600px) {
+  .main-content {
+    padding: 0 50px;
+  }
+}

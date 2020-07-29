@@ -14,7 +14,7 @@ function App() {
         <img alt="logo" src={logo}></img>
       </Header>
       <Layout>
-        <Content style={{ padding: "0 50px" }}>
+        <Content className="main-content">
           <Gallery fetcher={fetcher} />
         </Content>
       </Layout>

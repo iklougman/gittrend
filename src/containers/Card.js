@@ -1,8 +1,8 @@
 import React, { useState, useCallback } from "react";
 import PropTypes from "prop-types";
-import { Button, Tooltip, Col, Card as AntCard } from "antd";
+import { Button, Tooltip, Card as AntCard } from "antd";
 import { StarOutlined, StarFilled } from "@ant-design/icons";
-import { isStarred, starRepo, unStarRepo, opener } from "../utils";
+import { isStarred, starRepo, unStarRepo } from "../utils";
 import Meta from "antd/lib/card/Meta";
 
 // Component
@@ -38,6 +38,7 @@ const Card = ({ repo = {} }) => {
         <Tooltip title={hasStar ? "unstar" : "give a star"}>
           <Button
             block
+            data-testid="star-repo-btn"
             type={hasStar ? "primary" : "secondary"}
             onClick={handleStarRepo}
             icon={hasStar ? <StarFilled /> : <StarOutlined />}
@@ -57,10 +58,7 @@ const Card = ({ repo = {} }) => {
       <br />
       <Meta description={`Language: ${language}` || "-"} />
       <br />
-      <a
-        alt={`star number ${stars}`}
-        onClick={() => opener(`${html_url}/stargazers`)}
-      >
+      <a alt={`star number ${stars}`} href={`${html_url}/stargazers`}>
         <p>Show Stargazers</p>
       </a>
     </AntCard>

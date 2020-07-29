@@ -6,6 +6,15 @@ import { StarOutlined, StarFilled } from "@ant-design/icons";
 import { isStarred } from "../utils/starHandler";
 import { ALL_LANGUAGES } from "../constants";
 
+// TODOs for the future :)
+// I would outsource reducer and actions
+// extract text strings to a text file in case one day I will want to translate stuff
+// filtering anf mapping in the render is not so nice, but
+// depending on requirements I could implement other solution
+// the single warning in the console comes from the ant design button
+
+// as of time slot for this task is really limited I will keep things as they are
+
 const ACTIONS = {
   SET_REPOS: "SET_REPOS",
   APPLY_STARFILTER: "APPLY_STARFILTER",
@@ -111,8 +120,8 @@ function Gallery({ fetcher }) {
               : true;
           })
           .map((repo, i) => (
-            <Col lg={6} md={8} sm={12} xs={24} className="repo-card-container">
-              <Card key={i} repo={repo} />
+            <Col key={i} lg={6} md={8} sm={12} xs={24}>
+              <Card repo={repo} />
             </Col>
           ))}
       </Row>
