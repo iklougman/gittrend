@@ -1,0 +1,25 @@
+@import "antd/dist/antd";
+// variables
+@import "./_variables.scss";
+
+// layout
+@import "./_app";
+@import "./_gallery";
+@import "./_card";
+
+/* body */
+html {
+  box-sizing: border-box;
+}
+
+* {
+  box-sizing: inherit;
+  margin: 0;
+  padding: 0;
+}
+
+body {
+  background: #f2f2f2;
+  background-repeat: no-repeat;
+  font-family: $lato;
+}

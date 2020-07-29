@@ -1,0 +1,104 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`<Card /> Given an empty repository object Shows ean empty card with default data  1`] = `
+<DocumentFragment>
+  <div
+    class="repo-card"
+    data-testid="repo-card"
+  >
+    <div
+      class="avatar-container"
+    >
+      <img
+        alt="avatar No name"
+        class="avatar-image"
+        src=""
+      />
+      <a
+        alt="star number 0"
+        class="star-number"
+        href=""
+      >
+        <p>
+          0 Stars
+        </p>
+      </a>
+    </div>
+    <div>
+      <h4>
+        <a
+          alt=""
+          href=""
+        >
+          No name
+        </a>
+      </h4>
+    </div>
+    <div>
+      <p>
+        No description
+      </p>
+    </div>
+    <div>
+      <small>
+        Language: -
+      </small>
+    </div>
+  </div>
+</DocumentFragment>
+`;
+
+exports[`<Card /> Given correct github repository data object: Shows ean empty card with default data  1`] = `
+<DocumentFragment>
+  <div
+    class="repo-card"
+    data-testid="repo-card"
+  >
+    <div
+      class="avatar-container"
+    >
+      <img
+        alt="avatar littlstar/hivemind"
+        class="avatar-image"
+        src="https://avatars2.githubusercontent.com/u/5302528?v=4"
+      />
+      <a
+        alt="star number 253"
+        class="star-number"
+        href="https://api.github.com/repos/littlstar/hivemind/stargazers"
+      >
+        <p>
+          253 Stars
+        </p>
+      </a>
+    </div>
+    <div>
+      <h4>
+        <a
+          alt="https://github.com/littlstar/hivemind"
+          href="https://github.com/littlstar/hivemind"
+        >
+          littlstar/hivemind
+        </a>
+      </h4>
+    </div>
+    <div>
+      <button
+        data-testid="star-repo-btn"
+      >
+        ☆
+      </button>
+    </div>
+    <div>
+      <p>
+        For creating distributed jobs using AWS Lambda functions
+      </p>
+    </div>
+    <div>
+      <small>
+        Language: JavaScript
+      </small>
+    </div>
+  </div>
+</DocumentFragment>
+`;
