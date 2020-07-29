@@ -1,5 +1,7 @@
 import React, { useState, useCallback } from "react";
 import PropTypes from "prop-types";
+import { Button, Tooltip } from "antd";
+import { StarOutlined, StarFilled } from "@ant-design/icons";
 import { isStarred, starRepo, unStarRepo } from "../utils";
 import Avatar from "../components/Avatar";
 
@@ -43,11 +45,14 @@ const Card = ({ repo = {} }) => {
         </h4>
       </div>
       {Object.keys(repo).length > 0 && (
-        <div>
-          <button data-testid="star-repo-btn" onClick={handleStarRepo}>
-            {hasStar ? "\u2605" : "\u2606"}
-          </button>
-        </div>
+        <Tooltip title={hasStar ? "unstar" : "give a star"}>
+          <Button
+            type={hasStar ? "primary" : "secondary"}
+            onClick={handleStarRepo}
+            shape="circle"
+            icon={hasStar ? <StarFilled /> : <StarOutlined />}
+          />
+        </Tooltip>
       )}
 
       <div>
