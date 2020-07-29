@@ -101,20 +101,20 @@ function Gallery({ fetcher }) {
           </Select>
         </Col>
       </Row>
-      <Row className="repo-card-gallery">
-        <Col>
-          {state.repos
-            .filter((repo) => (state.isStarFilter ? isStarred(repo.id) : true))
-            .filter((repo) => {
-              const { language } = repo;
-              return state.selectedLanguage !== ALL_LANGUAGES
-                ? language === state.selectedLanguage
-                : true;
-            })
-            .map((repo, i) => (
+      <Row type="flex" gutter={10} className="repo-card-list">
+        {state.repos
+          .filter((repo) => (state.isStarFilter ? isStarred(repo.id) : true))
+          .filter((repo) => {
+            const { language } = repo;
+            return state.selectedLanguage !== ALL_LANGUAGES
+              ? language === state.selectedLanguage
+              : true;
+          })
+          .map((repo, i) => (
+            <Col lg={6} md={8} sm={12} xs={24} className="repo-card-container">
               <Card key={i} repo={repo} />
-            ))}
-        </Col>
+            </Col>
+          ))}
       </Row>
     </>
   );
