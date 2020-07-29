@@ -5,11 +5,10 @@ This project was bootstrapped with [Create React App](https://github.com/faceboo
 Tested in Chrome, Firefox and Safari. Unfortunately I have no Windows machine for IE
 
 TODOs for the future :)
-I would outsource reducer and actions
-extract text strings to a text file in case one day I will want to translate stuff
-filtering anf mapping in the render is not so nice, but
-depending on requirements I could implement other solution
-the single warning in the console comes from the ant design button
+# I would outsource reducer and actions
+# extract text strings to a text file in case one day I will want to translate stuff
+# filtering and mapping in the render is not so nice, but depending on requirements I could implement other solution
+# the single warning in the console comes from the ant design button
 
 // as of time slot for this task is really limited I will keep things as they are
 
