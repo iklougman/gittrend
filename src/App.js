@@ -3,17 +3,22 @@ import logo from "./logo.svg";
 import "./styles/main.scss";
 import Gallery from "./containers/Gallery";
 import { fetcher } from "./utils";
+import { Layout } from "antd";
+
+const { Header, Content } = Layout;
 
 function App() {
   return (
-    <>
-      <header className="main-header">
+    <Layout>
+      <Header className="main-header">
         <img alt="logo" src={logo}></img>
-      </header>
-      <div className="main-content">
-        <Gallery fetcher={fetcher} />
-      </div>
-    </>
+      </Header>
+      <Layout>
+        <Content className="main-content">
+          <Gallery fetcher={fetcher} />
+        </Content>
+      </Layout>
+    </Layout>
   );
 }
 

@@ -14,12 +14,17 @@ html {
 
 * {
   box-sizing: inherit;
-  margin: 0;
-  padding: 0;
 }
 
 body {
   background: #f2f2f2;
   background-repeat: no-repeat;
   font-family: $lato;
+  height: 100vh;
+}
+
+@media (min-width: 600px) {
+  .main-content {
+    padding: 0 50px;
+  }
 }

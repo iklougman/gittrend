@@ -1,38 +1,17 @@
 // repo card
-.repo-card-container {
-  border-radius: 0 0 3px 3px;
-  border: 1px $midGrey solid;
-  background-color: white;
+.repo-card {
   width: 100%;
-  margin: 5px;
-  padding: 15px;
-  a {
-    color: $blue;
-    font-family: $lato;
-    text-decoration: none;
+  padding: 5px;
+  margin-bottom: 10px;
+  min-height: 400px;
+  p,
+  a,
+  h2 {
+    overflow: hidden;
+    white-space: nowrap;
+    text-overflow: ellipsis;
   }
-
-  p {
-    color: $darkGrey;
-  }
-  .avatar-container {
-    width: 20%;
-    .avatar-image {
-      width: 100px;
-      height: 100px;
-      margin-left: auto;
-      margin-right: auto;
-      border-radius: 50%;
-      border: 1px $midGrey solid;
-      background-color: white;
-    }
-
-    .star-number {
-      text-align: center;
-      color: $darkGrey;
-      &:hover {
-        color: $blue;
-      }
-    }
+  button {
+    margin-bottom: 10px;
   }
 }
