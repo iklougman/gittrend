@@ -29,39 +29,41 @@ const Card = ({ repo = {} }) => {
   }, [id, userStarred]);
   const stars = stargazers_count + (isStarred(id) ? 1 : 0);
   return (
-    <AntCard
-      data-testid="repo-card"
-      className="repo-card"
-      cover={<img alt="example" src={owner.avatar_url} />}
-    >
-      {Object.keys(repo).length > 0 && (
-        <Tooltip title={hasStar ? "unstar" : "give a star"}>
-          <Button
-            block
-            data-testid="star-repo-btn"
-            type={hasStar ? "primary" : "secondary"}
-            onClick={handleStarRepo}
-            icon={hasStar ? <StarFilled /> : <StarOutlined />}
-          >
-            {stars} Stars
-          </Button>
+    <div>
+      <AntCard
+        data-testid="repo-card"
+        className="repo-card"
+        cover={<img alt="example" src={owner.avatar_url} />}
+      >
+        {Object.keys(repo).length > 0 && (
+          <Tooltip title={hasStar ? "unstar" : "give a star"}>
+            <Button
+              block
+              data-testid="star-repo-btn"
+              type={hasStar ? "primary" : "secondary"}
+              onClick={handleStarRepo}
+              icon={hasStar ? <StarFilled /> : <StarOutlined />}
+            >
+              {stars} Stars
+            </Button>
+          </Tooltip>
+        )}
+        <h2>
+          <a href={html_url} alt={html_url}>
+            {full_name}
+          </a>
+        </h2>
+        <Tooltip placement="bottom" title={description || "-"}>
+          <Meta title={description || "-"} />
         </Tooltip>
-      )}
-      <h2>
-        <a href={html_url} alt={html_url}>
-          {full_name}
+        <br />
+        <Meta description={`Language: ${language}` || "-"} />
+        <br />
+        <a alt={`star number ${stars}`} href={`${html_url}/stargazers`}>
+          <p>Show Stargazers</p>
         </a>
-      </h2>
-      <Tooltip placement="bottom" title={description || "-"}>
-        <Meta title={description || "-"} />
-      </Tooltip>
-      <br />
-      <Meta description={`Language: ${language}` || "-"} />
-      <br />
-      <a alt={`star number ${stars}`} href={`${html_url}/stargazers`}>
-        <p>Show Stargazers</p>
-      </a>
-    </AntCard>
+      </AntCard>
+    </div>
   );
 };
 
