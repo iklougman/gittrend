@@ -1,4 +1,4 @@
-import React, { useState, useCallback } from "react";
+import React, { useState } from "react";
 import PropTypes from "prop-types";
 import { Button, Tooltip, Card as AntCard } from "antd";
 import { StarOutlined, StarFilled } from "@ant-design/icons";
@@ -18,15 +18,14 @@ const Card = ({ repo = {} }) => {
   } = repo;
   const [userStarred, setUserStarred] = useState(false);
   const hasStar = isStarred(id);
-  const handleStarRepo = useCallback(() => {
+  const handleStarRepo = () => {
     if (isStarred(id)) {
       unStarRepo(id);
     } else {
       starRepo(id);
     }
-    // setHasStar(isStarred(id));
     setUserStarred(!userStarred);
-  }, [id, userStarred]);
+  };
   const stars = stargazers_count + (isStarred(id) ? 1 : 0);
   return (
     <div>
